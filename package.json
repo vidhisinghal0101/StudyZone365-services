@@ -1,0 +1,13 @@
+{
+  "name": "studyzone365-website",
+  "version": "1.0.0",
+  "description": "Single-page responsive website for StudyZone365",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.3.0"
+  }
+}
