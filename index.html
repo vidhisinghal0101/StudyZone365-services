@@ -142,8 +142,7 @@
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 5rem 0 4rem 0;
-      text-align: center;
+      padding: 5rem 0;
       background: linear-gradient(180deg, rgba(239, 246, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
       overflow: hidden;
     }
@@ -157,6 +156,17 @@
       background-image: 
         radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(239, 68, 68, 0.04) 0%, transparent 40%);
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: left;
     }
 
     .hero-tagline {
@@ -174,17 +184,36 @@
     .hero-headline {
       font-size: 2.75rem;
       line-height: 1.2;
-      max-width: 900px;
-      margin: 0 auto 1.5rem auto;
       letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
     }
 
     .hero-tagline-text {
       font-size: 1.125rem;
       color: var(--slate-600);
-      max-width: 650px;
-      margin: 0 auto 2.5rem auto;
+      margin-bottom: 2.5rem;
       font-weight: 450;
+    }
+
+    .hero-image-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--slate-100);
+      aspect-ratio: 4/3;
+      display: flex;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-all);
+    }
+
+    .hero-image:hover {
+      transform: scale(1.03);
     }
 
     .hero-cta-btn {
@@ -424,16 +453,28 @@
     }
 
     /* Why Choose Us Section */
+    /* Why Choose Us Section */
     .why-choose-us {
       padding: 5rem 0;
       background-color: var(--slate-50);
     }
 
+    .why-choose-us-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .why-choose-us-content {
+      text-align: left;
+    }
+
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .trust-card {
@@ -470,6 +511,27 @@
       font-size: 1rem;
       font-weight: 600;
       color: var(--slate-800);
+    }
+
+    .why-choose-us-image-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--slate-100);
+      aspect-ratio: 4/3;
+      display: flex;
+    }
+
+    .why-choose-us-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-all);
+    }
+
+    .why-choose-us-image:hover {
+      transform: scale(1.03);
     }
 
     /* Footer Section */
@@ -567,6 +629,31 @@
       }
     }
 
+    @media (max-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .hero-image-container {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .why-choose-us-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .why-choose-us-content {
+        text-align: center;
+      }
+      .why-choose-us-image-container {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
     @media (max-width: 768px) {
       .hero-headline {
         font-size: 2rem;
@@ -616,18 +703,26 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <span class="hero-tagline">Professional IT Support</span>
-      <h1 class="hero-headline">
-        Professional Computer & IT Sales and Services for Homes, Offices, Schools & Businesses
-      </h1>
-      <p class="hero-tagline-text">
-        "Share your requirement, and our team will provide the best solution at a competitive price."
-      </p>
-      <a href="#quote-form" class="hero-cta-btn">
-        <span>Request a Quote Now</span>
-        <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
-      </a>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline">Professional IT Support</span>
+        <h1 class="hero-headline">
+          Professional Computer & IT Sales and Services for Homes, Offices, Schools & Businesses
+        </h1>
+        <p class="hero-tagline-text">
+          "Share your requirement, and our team will provide the best solution at a competitive price."
+        </p>
+        <a href="#quote-form" class="hero-cta-btn">
+          <span>Request a Quote Now</span>
+          <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+        </a>
+      </div>
+      <div class="hero-image-container">
+        <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&fit=crop&w=800&q=80" 
+             alt="IT Support and Computer Repair Specialist" 
+             class="hero-image" 
+             loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -726,55 +821,63 @@
 
   <!-- Why Choose Us Section -->
   <section id="why-choose-us" class="why-choose-us">
-    <div class="container">
-      <div class="section-header">
-        <h2>Why Choose Us?</h2>
-        <p>We pride ourselves on offering premium quality, speed, and reliability to keep you connected.</p>
-      </div>
+    <div class="container why-choose-us-container">
+      <div class="why-choose-us-content">
+        <div class="section-header" style="text-align: left; margin: 0 0 2rem 0;">
+          <h2>Why Choose Us?</h2>
+          <p>We pride ourselves on offering premium quality, speed, and reliability to keep you connected.</p>
+        </div>
 
-      <div class="trust-grid">
-        <!-- 1 -->
-        <div class="trust-card">
-          <div class="checkmark-container">
-            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+        <div class="trust-grid">
+          <!-- 1 -->
+          <div class="trust-card">
+            <div class="checkmark-container">
+              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+            </div>
+            <span class="trust-title">Experienced & Skilled Technicians</span>
           </div>
-          <span class="trust-title">Experienced & Skilled Technicians</span>
-        </div>
-        <!-- 2 -->
-        <div class="trust-card">
-          <div class="checkmark-container">
-            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+          <!-- 2 -->
+          <div class="trust-card">
+            <div class="checkmark-container">
+              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+            </div>
+            <span class="trust-title">Genuine Products</span>
           </div>
-          <span class="trust-title">Genuine Products</span>
-        </div>
-        <!-- 3 -->
-        <div class="trust-card">
-          <div class="checkmark-container">
-            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+          <!-- 3 -->
+          <div class="trust-card">
+            <div class="checkmark-container">
+              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+            </div>
+            <span class="trust-title">Fast & Reliable Service</span>
           </div>
-          <span class="trust-title">Fast & Reliable Service</span>
-        </div>
-        <!-- 4 -->
-        <div class="trust-card">
-          <div class="checkmark-container">
-            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+          <!-- 4 -->
+          <div class="trust-card">
+            <div class="checkmark-container">
+              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+            </div>
+            <span class="trust-title">Affordable Pricing</span>
           </div>
-          <span class="trust-title">Affordable Pricing</span>
-        </div>
-        <!-- 5 -->
-        <div class="trust-card">
-          <div class="checkmark-container">
-            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+          <!-- 5 -->
+          <div class="trust-card">
+            <div class="checkmark-container">
+              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+            </div>
+            <span class="trust-title">On-Time Support</span>
           </div>
-          <span class="trust-title">On-Time Support</span>
-        </div>
-        <!-- 6 -->
-        <div class="trust-card">
-          <div class="checkmark-container">
-            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+          <!-- 6 -->
+          <div class="trust-card">
+            <div class="checkmark-container">
+              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+            </div>
+            <span class="trust-title">Customer Satisfaction is Our Priority</span>
           </div>
-          <span class="trust-title">Customer Satisfaction is Our Priority</span>
         </div>
+      </div>
+      <div class="why-choose-us-image-container">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+             alt="Skilled technical customer support staff working on device" 
+             class="why-choose-us-image" 
+             loading="lazy">
       </div>
     </div>
   </section>
@@ -929,7 +1032,7 @@
     lucide.createIcons();
 
     // Configuration: Paste your Google Apps Script Web App URL here
-    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzK6h-H4qOqJ7zR4FcOl4XwheDBAQHcU2oKmzChCuCQwdHecQueaIKMWj7Owmmw_VG5/exec";
 
     // Handle form submission
     function submitQuoteForm(event) {
