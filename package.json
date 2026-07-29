@@ -1,7 +1,7 @@
 {
-  "name": "studyzone365-website",
+  "name": "arzon-technologies-website",
   "version": "1.0.0",
-  "description": "Single-page responsive website for StudyZone365",
+  "description": "Single-page responsive website for Arzon Technologies",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -11,7 +11,7 @@ The site is built with modern, optimized web standards using plain HTML, custom 
 - **Google Form Integration**: A responsive, centered quote request form styled inside a custom container card with shadows and a loading state indicator.
 - **Services Grid**: A 9-card interactive services layout containing detailed offerings (CCTV, networking, data recovery, PC/laptop sales & repairs, AMC, etc.).
 - **Trust Elements**: A checklist grid highlighting the business's key value propositions with custom green checkmark iconography.
-- **Tailored Footer**: A clean, information-focused footer with the business description, email address (`studyzone365.com@gmail.com`), and a final thank-you message.
+- **Tailored Footer**: A clean, information-focused footer with the business description, email address (`arzontechnologies@gmail.com`), and a final thank-you message.
 
 ## 🛠️ Tech Stack
 
@@ -39,5 +39,5 @@ To run the project locally with hot-reloading:
 
 1. Push this project to your GitHub repository.
 2. Visit the [Vercel Dashboard](https://vercel.com/new).
-3. Import the `studyzone365-website` repository.
+3. Import the `arzon-technologies-website` repository.
 4. Click **Deploy**. Vercel will automatically detect the static project and configure deployments on every push.
