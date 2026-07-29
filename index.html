@@ -216,7 +216,7 @@
       transform: translateX(4px);
     }
 
-    /* Google Form Embed Card (Main Focus) */
+    /* Custom HTML Form (Direct to Google Sheets via Apps Script) */
     .form-section {
       padding: 2rem 0 5rem 0;
       position: relative;
@@ -224,77 +224,124 @@
 
     .form-heading {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.25rem;
       margin-bottom: 2rem;
       color: var(--slate-900);
     }
 
     .form-card {
-      max-width: 720px;
+      max-width: 800px;
       margin: 0 auto;
       background: var(--white);
       border-radius: 16px;
       border: 1px solid var(--slate-100);
       box-shadow: var(--shadow-xl);
-      padding: 1.5rem;
+      padding: 3rem 2.5rem;
       position: relative;
       overflow: hidden;
     }
 
-    /* Custom Loading Indicator */
-    .form-loading-indicator {
-      position: absolute;
-      top: 300px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .form-group {
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--slate-800);
+      display: flex;
       align-items: center;
-      gap: 1rem;
-      color: var(--slate-600);
-      font-weight: 500;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
+      gap: 0.25rem;
     }
 
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid var(--slate-100);
-      border-top: 4px solid var(--primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
+    .form-label span.required-dot {
+      color: #ef4444;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .form-iframe-wrapper {
-      position: relative;
+    .form-input {
       width: 100%;
-      height: 1945px;
-      z-index: 2;
-    }
-
-    .form-iframe-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--slate-100);
+      background-color: var(--slate-50);
       border-radius: 8px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition-all);
+      color: var(--slate-900);
     }
 
-    .form-iframe-wrapper.loaded iframe {
-      opacity: 1;
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background-color: var(--white);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
     }
 
-    .form-iframe-wrapper.loaded ~ .form-loading-indicator {
-      opacity: 0;
-      display: none;
+    .form-input::placeholder {
+      color: rgba(71, 85, 105, 0.5);
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .form-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.875rem 2.5rem;
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      transition: var(--transition-all);
+    }
+
+    .form-submit-btn:disabled {
+      background-color: var(--slate-600);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .form-submit-btn:hover:not(:disabled) {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    }
+
+    .thankyou-card {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Services Section */
@@ -528,12 +575,15 @@
         padding: 1rem 0 3rem 0;
       }
       .form-card {
-        padding: 1rem;
+        padding: 2rem 1.25rem;
         border-radius: 12px;
       }
-      /* Ensure the iframe container shrinks correctly */
-      .form-iframe-wrapper {
-        height: 1800px; /* Slight height reduction for mobile if margins adjust */
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
       }
       .services-grid {
         grid-template-columns: 1fr;
@@ -548,9 +598,6 @@
     @media (max-width: 480px) {
       .hero-headline {
         font-size: 1.75rem;
-      }
-      .form-iframe-wrapper {
-        height: 1950px; /* Safe padding for Google Form content expansion */
       }
     }
   </style>
@@ -732,43 +779,122 @@
     </div>
   </section>
 
-  <!-- Google Form Embed Section (Main Focus) -->
+  <!-- Google Form Custom Submission Section -->
   <section id="quote-form" class="form-section">
     <div class="container">
       <h2 class="form-heading">Tell Us What You Need</h2>
       <div class="form-card">
         
-        <!-- Fallback Alert for Cookie Blockers -->
-        <div style="background-color: var(--slate-50); border: 1px solid var(--slate-100); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center; font-size: 0.9rem; color: var(--slate-600); display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
-          <span>Having trouble loading or viewing the form below?</span>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFxLYXxjnVItM0uu9QgzdpE59kPrkh2yIXaMOKNk2bUStQng/viewform?usp=sf_link" 
-             target="_blank" 
-             class="header-cta" 
-             style="padding: 0.5rem 1rem; font-size: 0.8rem; box-shadow: none;">
-            <span>Open Form in New Tab</span>
-            <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-          </a>
+        <!-- Custom Thank You Card (Initially Hidden) -->
+        <div id="thank-you-card" class="thankyou-card" style="display: none;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--emerald-50); color: var(--emerald-500); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+            <i data-lucide="check" style="width: 36px; height: 36px; stroke-width: 3;"></i>
+          </div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--slate-900);">Request Submitted!</h3>
+          <p style="color: var(--slate-600); max-width: 480px; margin: 0 auto 2rem auto; font-size: 1rem; line-height: 1.6;">
+            Thank you for choosing StudyZone365. Your requirement has been successfully registered. Our team will review the details and provide the best solution at a competitive price.
+          </p>
+          <button onclick="resetQuoteForm()" class="form-submit-btn" style="box-shadow: none;">
+            <i data-lucide="rotate-ccw" style="width: 18px; height: 18px;"></i>
+            <span>Submit Another Request</span>
+          </button>
         </div>
 
-        <!-- Spinner placeholder shown until iframe is fully loaded -->
-        <div class="form-loading-indicator" id="form-loader">
-          <div class="spinner"></div>
-          <p>Loading submission form...</p>
-        </div>
-        
-        <div class="form-iframe-wrapper" id="iframe-wrapper">
-          <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfFxLYXxjnVItM0uu9QgzdpE59kPrkh2yIXaMOKNk2bUStQng/viewform?embedded=true" 
-            width="640" 
-            height="1945" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0"
-            onload="iframeLoaded()"
-            title="Quote Request Google Form">
-            Loading…
-          </iframe>
-        </div>
+        <!-- Custom Form -->
+        <form id="quote-form-element" onsubmit="submitQuoteForm(event);">
+          <div class="form-grid">
+            <!-- Name -->
+            <div class="form-group">
+              <label for="input-name" class="form-label">
+                Name <span class="required-dot">*</span>
+              </label>
+              <input type="text" name="name" id="input-name" class="form-input" placeholder="Your full name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="input-email" class="form-label">
+                Email Address <span class="required-dot">*</span>
+              </label>
+              <input type="email" name="email" id="input-email" class="form-input" placeholder="Your email address" required>
+            </div>
+
+            <!-- Phone number -->
+            <div class="form-group">
+              <label for="input-phone" class="form-label">
+                Phone Number <span class="required-dot">*</span>
+              </label>
+              <input type="tel" name="phone" id="input-phone" class="form-input" placeholder="Your contact number" required>
+            </div>
+
+            <!-- Are you an Individual, School, or Business? -->
+            <div class="form-group">
+              <label for="input-segment" class="form-label">
+                Are you an Individual, School, or Business?
+              </label>
+              <select name="segment" id="input-segment" class="form-input">
+                <option value="Home">Individual / Home User</option>
+                <option value="Office">Office / Business</option>
+                <option value="Instituition">School / Institution</option>
+                <option value="Business">Enterprise Business</option>
+              </select>
+            </div>
+
+            <!-- Number of devices -->
+            <div class="form-group">
+              <label for="input-devices" class="form-label">
+                Number of Devices to be Covered
+              </label>
+              <input type="text" name="devices" id="input-devices" class="form-input" placeholder="e.g. 1 Laptop, 5 Computers, 8 CCTVs">
+            </div>
+
+            <!-- How urgent is this? -->
+            <div class="form-group">
+              <label for="input-urgency" class="form-label">
+                How urgent is this?
+              </label>
+              <select name="urgency" id="input-urgency" class="form-input">
+                <option value="Immediate (within 24–48 hrs)">Immediate (within 24–48 hrs)</option>
+                <option value="This week">This week</option>
+              </select>
+            </div>
+
+            <!-- Select preferred language -->
+            <div class="form-group">
+              <label for="input-language" class="form-label">
+                Preferred Language for Support
+              </label>
+              <select name="language" id="input-language" class="form-input">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Kannada">Kannada</option>
+              </select>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+              <label for="input-address" class="form-label">
+                Address
+              </label>
+              <input type="text" name="address" id="input-address" class="form-input" placeholder="Your site or office address">
+            </div>
+
+            <!-- What Can We Help You With? (Requirements) -->
+            <div class="form-group full-width">
+              <label for="input-requirements" class="form-label">
+                What Can We Help You With? (Describe your requirements) <span class="required-dot">*</span>
+              </label>
+              <textarea name="requirements" id="input-requirements" class="form-input" placeholder="Tell us what sales or services you need..." required></textarea>
+            </div>
+          </div>
+
+          <div class="form-submit-container">
+            <button type="submit" id="submit-btn" class="form-submit-btn">
+              <span>Submit Request</span>
+              <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -802,17 +928,60 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Fade out loading spinner when iframe completes loading
-    function iframeLoaded() {
-      const wrapper = document.getElementById('form-loader');
-      wrapper.style.display = 'none';
-      const iframeWrapper = document.getElementById('iframe-wrapper');
-      iframeWrapper.style.opacity = '1';
+    // Configuration: Paste your Google Apps Script Web App URL here
+    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL";
+
+    // Handle form submission
+    function submitQuoteForm(event) {
+      event.preventDefault();
       
-      const iframe = iframeWrapper.querySelector('iframe');
-      if (iframe) {
-        iframe.style.opacity = '1';
+      const form = document.getElementById('quote-form-element');
+      const submitBtn = document.getElementById('submit-btn');
+      
+      // Prevent double submissions
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Submitting...</span><div class="spinner" style="width: 16px; height: 16px; border-width: 2px; border-top-color: white;"></div>`;
+      
+      if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL") {
+        alert("Please set up your Google Apps Script URL in index.html to enable form submissions.");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" style="width: 16px; height: 16px;"></i>`;
+        lucide.createIcons();
+        return;
       }
+      
+      const formData = new FormData(form);
+      
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Allows submission to redirect smoothly
+      })
+      .then(() => {
+        // Show success state
+        form.style.display = 'none';
+        document.getElementById('thank-you-card').style.display = 'block';
+        lucide.createIcons();
+        document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth' });
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
+        alert("An error occurred during submission. Please try again.");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" style="width: 16px; height: 16px;"></i>`;
+        lucide.createIcons();
+      });
+    }
+
+    function resetQuoteForm() {
+      document.getElementById('quote-form-element').reset();
+      document.getElementById('thank-you-card').style.display = 'none';
+      document.getElementById('quote-form-element').style.display = 'block';
+      
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" style="width: 16px; height: 16px;"></i>`;
+      lucide.createIcons();
     }
 
     // Shrink header background transparency on scroll
