@@ -1,6 +1,6 @@
-# StudyZone365 Website
+# Arzon Technologies Website
 
-A responsive, single-page professional marketing website for **StudyZone365**—a Computer & IT Sales and Services business serving homes, offices, schools, and businesses.
+A responsive, single-page professional marketing website for **Arzon Technologies**—a Computer & IT Sales and Services business serving homes, offices, schools, and businesses.
 
 The site is built with modern, optimized web standards using plain HTML, custom Vanilla CSS, and JavaScript.
 

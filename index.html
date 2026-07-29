@@ -3,42 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyZone365 | Professional Computer & IT Sales and Services</title>
-  <meta name="description" content="StudyZone365 provides professional computer, laptop, printer, and CCTV sales, repairs, and IT support for homes, offices, schools, and businesses.">
+  <title>Arzon Technologies | Professional Computer & IT Sales and Services</title>
+  <meta name="description" content="Arzon Technologies provides professional computer, laptop, printer, and CCTV sales, repairs, and IT support for homes, offices, schools, and businesses.">
   
-  <!-- Google Fonts - Inter -->
+  <!-- Google Fonts - Sora & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Modern CSS Design System */
+    /* SaaS Deep Navy / Electric Blue Palette */
     :root {
-      --primary: #2563eb;       /* Brand blue */
-      --primary-hover: #1d4ed8; /* Darker blue */
-      --slate-900: #0f172a;     /* Dark navy */
-      --slate-800: #1e293b;     /* Slate */
-      --slate-600: #475569;     /* Slate muted */
-      --slate-100: #f1f5f9;     /* Light gray border/bg */
-      --slate-50: #f8fafc;      /* Warm white */
-      --emerald-500: #10b981;   /* Success green */
-      --emerald-50: #ecfdf5;    /* Light green background */
-      --white: #ffffff;
+      --bg-main: #060913;        /* Extremely deep navy */
+      --bg-card: #0c1122;        /* Lighter navy for cards */
+      --bg-card-hover: #12182e;  /* Card hover background */
+      --primary: #2563eb;        /* Electric blue primary */
+      --primary-hover: #1d4ed8;
+      --accent: #06b6d4;         /* Cyan brand accent color */
+      --accent-green: #10b981;   /* Success green */
+      --text-main: #f8fafc;      /* Off-white */
+      --text-muted: #94a3b8;     /* Slate-400 muted text */
+      --border-color: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(6, 182, 212, 0.25);
       
-      /* Red-Blue Gradient for Logo */
-      --logo-gradient: linear-gradient(135deg, #ef4444 0%, #3b82f6 100%);
+      /* Font pairings */
+      --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       
-      /* Shadow Design */
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+      --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.5);
+      --shadow-accent-glow: 0 0 25px rgba(6, 182, 212, 0.2);
       
-      /* Transitions */
-      --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-all: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* CSS Reset */
@@ -50,25 +52,27 @@
 
     html {
       scroll-behavior: smooth;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--slate-800);
-      background-color: var(--slate-50);
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: var(--bg-main);
       -webkit-font-smoothing: antialiased;
     }
 
     body {
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* Typography Utilities */
     h1, h2, h3, h4 {
+      font-family: var(--font-heading);
       font-weight: 700;
-      color: var(--slate-900);
-      letter-spacing: -0.02em;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
     }
 
     p {
-      color: var(--slate-600);
+      color: var(--text-muted);
     }
 
     /* Layout Containers */
@@ -83,24 +87,24 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(6, 9, 19, 0.7);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      box-shadow: var(--shadow-sm);
+      border-bottom: 1px solid var(--border-color);
       transition: var(--transition-all);
     }
 
     header.scrolled {
-      padding: 0.5rem 0;
-      background-color: rgba(255, 255, 255, 0.95);
+      padding: 0.25rem 0;
+      background-color: rgba(6, 9, 19, 0.85);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
     .header-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 70px;
+      height: 75px;
     }
 
     .logo-container {
@@ -110,12 +114,16 @@
     }
 
     .logo-text {
-      font-size: 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
       font-weight: 800;
-      background: var(--logo-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.03em;
+      color: var(--text-main);
+      letter-spacing: -0.04em;
+    }
+
+    .logo-text::after {
+      content: '.';
+      color: var(--accent);
     }
 
     .header-cta {
@@ -123,44 +131,72 @@
       align-items: center;
       justify-content: center;
       padding: 0.625rem 1.25rem;
-      background-color: var(--primary);
-      color: var(--white);
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       text-decoration: none;
       font-size: 0.875rem;
       font-weight: 600;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
       transition: var(--transition-all);
     }
 
     .header-cta:hover {
-      background-color: var(--primary-hover);
+      background-color: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
       transform: translateY(-1px);
-      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
     }
 
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 5rem 0;
-      background: linear-gradient(180deg, rgba(239, 246, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+      padding: 9rem 0 7rem 0;
+      background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 45%);
       overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    /* Background tech grid effect */
-    .hero::before {
-      content: '';
+    /* Floating blobs for SaaS-style depth */
+    .glowing-blob {
       position: absolute;
-      inset: 0;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0) 70%);
+      filter: blur(50px);
       z-index: -1;
-      background-image: 
-        radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(239, 68, 68, 0.04) 0%, transparent 40%);
+      pointer-events: none;
+      animation: float-blob 20s infinite alternate ease-in-out;
+    }
+
+    .blob-1 {
+      top: -150px;
+      left: -150px;
+    }
+
+    .blob-2 {
+      bottom: -150px;
+      right: -150px;
+      animation-delay: 5s;
+    }
+
+    @keyframes float-blob {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(40px, -60px) scale(1.15);
+      }
+      100% {
+        transform: translate(-30px, 30px) scale(0.9);
+      }
     }
 
     .hero-container {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 4rem;
       align-items: center;
     }
@@ -170,71 +206,63 @@
     }
 
     .hero-tagline {
-      display: inline-block;
-      padding: 0.35rem 1rem;
-      background: rgba(37, 99, 235, 0.08);
-      color: var(--primary);
-      font-size: 0.875rem;
-      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.15rem;
+      background: rgba(6, 182, 212, 0.06);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
       border-radius: 9999px;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .hero-headline {
-      font-size: 2.75rem;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+      font-size: 3.5rem;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: var(--text-main);
       margin-bottom: 1.5rem;
     }
 
+    .text-gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .hero-tagline-text {
-      font-size: 1.125rem;
-      color: var(--slate-600);
-      margin-bottom: 2.5rem;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
       font-weight: 450;
-    }
-
-    .hero-image-container {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow-xl);
-      border: 1px solid var(--slate-100);
-      aspect-ratio: 4/3;
-      display: flex;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition-all);
-    }
-
-    .hero-image:hover {
-      transform: scale(1.03);
+      line-height: 1.7;
     }
 
     .hero-cta-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      background-color: var(--primary);
-      color: var(--white);
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background-color: var(--accent);
+      color: #060913;
       text-decoration: none;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
       transition: var(--transition-all);
     }
 
     .hero-cta-btn:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+      background-color: #22d3ee;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.45);
     }
 
     .hero-cta-btn svg {
@@ -242,37 +270,256 @@
     }
 
     .hero-cta-btn:hover svg {
-      transform: translateX(4px);
+      transform: translateX(6px);
     }
 
-    /* Custom HTML Form (Direct to Google Sheets via Apps Script) */
-    .form-section {
-      padding: 2rem 0 5rem 0;
+    .hero-image-wrapper {
+      display: flex;
+      justify-content: center;
       position: relative;
+    }
+
+    .hero-tech-svg {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 8rem 0;
+      background: linear-gradient(180deg, var(--bg-main) 0%, #0d1223 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 5rem auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: rgba(19, 26, 48, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      transition: var(--transition-all);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .service-card:hover {
+      background: rgba(19, 26, 48, 0.7);
+      transform: translateY(-8px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-lg), var(--shadow-accent-glow);
+    }
+
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background-color: rgba(6, 182, 212, 0.08);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+      transition: var(--transition-all);
+      box-shadow: 0 2px 8px rgba(6, 182, 212, 0.04);
+    }
+
+    .service-card:hover .service-icon-box {
+      background-color: var(--accent);
+      color: #060913;
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+    }
+
+    .service-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+      padding: 8rem 0;
+      background: linear-gradient(180deg, #0d1223 0%, var(--bg-main) 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      background: rgba(19, 26, 48, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 6rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .trust-card {
+      background: rgba(19, 26, 48, 0.3);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      transition: var(--transition-all);
+    }
+
+    .trust-card:hover {
+      background: rgba(19, 26, 48, 0.6);
+      transform: translateY(-4px);
+      border-color: rgba(16, 185, 129, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .checkmark-container {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(16, 185, 129, 0.08);
+      color: var(--accent-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .trust-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Custom HTML Form Section */
+    .form-section {
+      padding: 8rem 0 4rem 0;
+      background: var(--bg-main);
+      position: relative;
+      z-index: 5;
+    }
+
+    .form-container-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .form-illustration-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .form-heading {
-      text-align: center;
-      font-size: 2.25rem;
-      margin-bottom: 2rem;
-      color: var(--slate-900);
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .form-subtext {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .form-illustration-svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
     }
 
     .form-card {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 16px;
-      border: 1px solid var(--slate-100);
+      background: #0c1122;
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
       box-shadow: var(--shadow-xl);
-      padding: 3rem 2.5rem;
+      padding: 3.5rem;
       position: relative;
       overflow: hidden;
+      border-top: 4px solid var(--accent);
+      margin-bottom: -5rem;
+      z-index: 10;
     }
 
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
 
@@ -287,12 +534,13 @@
     }
 
     .form-label {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--slate-800);
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 0.25rem;
+      letter-spacing: 0.02em;
     }
 
     .form-label span.required-dot {
@@ -301,30 +549,44 @@
 
     .form-input {
       width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1px solid var(--slate-100);
-      background-color: var(--slate-50);
+      padding: 0.85rem 1.15rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.03);
       border-radius: 8px;
       font-family: inherit;
       font-size: 0.95rem;
       transition: var(--transition-all);
-      color: var(--slate-900);
+      color: var(--text-main);
     }
 
     .form-input:focus {
       outline: none;
-      border-color: var(--primary);
-      background-color: var(--white);
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+      border-color: var(--accent);
+      background-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
     }
 
     .form-input::placeholder {
-      color: rgba(71, 85, 105, 0.5);
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    select.form-input {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1.15rem center;
+      background-size: 1rem;
+      padding-right: 2.5rem;
+    }
+
+    select.form-input option {
+      background-color: #0c1122;
+      color: var(--text-main);
     }
 
     textarea.form-input {
       resize: vertical;
-      min-height: 100px;
+      min-height: 120px;
     }
 
     .form-submit-container {
@@ -338,28 +600,29 @@
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
-      padding: 0.875rem 2.5rem;
-      background-color: var(--primary);
-      color: var(--white);
+      padding: 1rem 3rem;
+      background-color: var(--accent);
+      color: #060913;
       border: none;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
       transition: var(--transition-all);
     }
 
     .form-submit-btn:disabled {
-      background-color: var(--slate-600);
+      background-color: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
       cursor: not-allowed;
       box-shadow: none;
     }
 
     .form-submit-btn:hover:not(:disabled) {
-      background-color: var(--primary-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+      background-color: #22d3ee;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.45);
     }
 
     .thankyou-card {
@@ -368,302 +631,204 @@
       animation: fadeIn 0.4s ease-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Footer Section */
+    footer {
+      background-color: #03050a;
+      color: var(--text-main);
+      padding: 9rem 0 2rem 0;
+      border-top: 1px solid var(--border-color);
+      position: relative;
+      z-index: 1;
     }
 
-    /* Services Section */
-    .services-section {
-      padding: 5rem 0;
-      background-color: var(--white);
-      border-top: 1px solid var(--slate-100);
-      border-bottom: 1px solid var(--slate-100);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 3.5rem auto;
-    }
-
-    .section-header h2 {
-      font-size: 2.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-header p {
-      font-size: 1rem;
-      color: var(--slate-600);
-    }
-
-    .services-grid {
+    .footer-columns {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
     }
 
-    .service-card {
-      background-color: var(--slate-50);
-      border: 1px solid var(--slate-100);
-      border-radius: 12px;
-      padding: 2rem;
-      transition: var(--transition-all);
+    .footer-col {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      gap: 1.5rem;
     }
 
-    .service-card:hover {
-      background-color: var(--white);
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(37, 99, 235, 0.2);
-    }
-
-    .service-icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background-color: rgba(37, 99, 235, 0.08);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      transition: var(--transition-all);
-    }
-
-    .service-card:hover .service-icon-box {
-      background-color: var(--primary);
-      color: var(--white);
-    }
-
-    .service-title {
+    .footer-title {
+      font-family: var(--font-heading);
       font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--slate-900);
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .service-desc {
-      font-size: 0.925rem;
-      line-height: 1.5;
-      color: var(--slate-600);
-    }
-
-    /* Why Choose Us Section */
-    /* Why Choose Us Section */
-    .why-choose-us {
-      padding: 5rem 0;
-      background-color: var(--slate-50);
-    }
-
-    .why-choose-us-container {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .why-choose-us-content {
-      text-align: left;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .trust-card {
-      background-color: var(--white);
-      border: 1px solid var(--slate-100);
-      border-radius: 10px;
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition-all);
-    }
-
-    .trust-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(16, 185, 129, 0.2);
-    }
-
-    .checkmark-container {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: var(--emerald-50);
-      color: var(--emerald-500);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .trust-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--slate-800);
-    }
-
-    .why-choose-us-image-container {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow-xl);
-      border: 1px solid var(--slate-100);
-      aspect-ratio: 4/3;
-      display: flex;
-    }
-
-    .why-choose-us-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition-all);
-    }
-
-    .why-choose-us-image:hover {
-      transform: scale(1.03);
-    }
-
-    /* Footer Section */
-    footer {
-      background-color: var(--slate-900);
-      color: var(--white);
-      padding: 4rem 0 2rem 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      gap: 2rem;
-    }
-
-    .footer-logo {
-      font-size: 1.75rem;
+    .footer-logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
       font-weight: 800;
-      background: var(--logo-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.03em;
+      color: var(--text-main);
+      letter-spacing: -0.04em;
     }
 
-    .footer-desc {
-      color: rgba(226, 232, 240, 0.85);
-      font-size: 1.1rem;
-      max-width: 600px;
+    .footer-logo-text::after {
+      content: '.';
+      color: var(--accent);
+    }
+
+    .footer-desc-col {
+      color: var(--text-muted);
+      font-size: 0.95rem;
       line-height: 1.6;
     }
 
-    .footer-email-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1.25rem 2rem;
-      width: 100%;
-      max-width: 450px;
+    .footer-links {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
-    .footer-email-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255, 255, 255, 0.5);
-      font-weight: 600;
-    }
-
-    .footer-email {
-      font-size: 1.25rem;
-      color: var(--white);
+    .footer-links a {
+      color: var(--text-muted);
       text-decoration: none;
-      font-weight: 700;
+      font-size: 0.95rem;
       transition: var(--transition-all);
     }
 
-    .footer-email:hover {
-      color: var(--primary);
+    .footer-links a:hover {
+      color: var(--accent);
+      padding-left: 4px;
     }
 
-    .footer-thankyou {
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.7);
-      margin-top: 1rem;
-      font-size: 1rem;
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .footer-divider {
-      width: 100%;
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.1);
-      margin: 2.5rem 0 1.5rem 0;
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition-all);
+      font-weight: 600;
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 2rem;
     }
 
     .footer-copyright {
       font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .social-icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-all);
+      text-decoration: none;
+    }
+
+    .social-icon-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: rgba(6, 182, 212, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll Reveal System */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Responsive Grid Adaptations */
     @media (max-width: 1024px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .hero-image-wrapper {
+        max-width: 420px;
+        margin: 0 auto;
+      }
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .trust-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-    }
-
-    @media (max-width: 992px) {
-      .hero-container {
+      .form-container-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 4rem;
       }
-      .hero-content {
+      .form-illustration-wrapper {
+        align-items: center;
         text-align: center;
-      }
-      .hero-image-container {
-        max-width: 500px;
-        margin: 0 auto;
-      }
-      .why-choose-us-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .why-choose-us-content {
-        text-align: center;
-      }
-      .why-choose-us-image-container {
-        max-width: 500px;
-        margin: 0 auto;
       }
     }
 
     @media (max-width: 768px) {
       .hero-headline {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
-      .form-section {
-        padding: 1rem 0 3rem 0;
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .stats-strip {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 4rem;
+      }
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
       }
       .form-card {
-        padding: 2rem 1.25rem;
-        border-radius: 12px;
+        padding: 2.5rem 1.5rem;
+        border-radius: 16px;
+        margin-bottom: -3.5rem;
       }
       .form-grid {
         grid-template-columns: 1fr;
@@ -672,19 +837,18 @@
       .form-group.full-width {
         grid-column: span 1;
       }
-      .services-grid {
+      footer {
+        padding: 6.5rem 0 2rem 0;
+      }
+      .footer-columns {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+      }
+      .footer-bottom {
+        flex-direction: column-reverse;
         gap: 1.5rem;
-      }
-      .trust-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-headline {
-        font-size: 1.75rem;
+        align-items: center;
       }
     }
   </style>
@@ -694,40 +858,132 @@
   <!-- Sticky Header -->
   <header id="main-header">
     <div class="container header-nav">
-      <a href="#" class="logo-container" aria-label="StudyZone365 Home">
-        <span class="logo-text">StudyZone365</span>
+      <a href="#" class="logo-container" aria-label="Arzon Technologies Home">
+        <span class="logo-text">Arzon Technologies</span>
       </a>
       <a href="#quote-form" class="header-cta">Request a Quote</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero reveal">
+    <!-- Glowing background blobs -->
+    <div class="glowing-blob blob-1"></div>
+    <div class="glowing-blob blob-2"></div>
+    
     <div class="container hero-container">
       <div class="hero-content">
-        <span class="hero-tagline">Professional IT Support</span>
+        <span class="hero-tagline">
+          <i data-lucide="zap" style="width: 14px; height: 14px; fill: currentColor;"></i>
+          <span>Professional IT Support</span>
+        </span>
         <h1 class="hero-headline">
-          Professional Computer & IT Sales and Services for Homes, Offices, Schools & Businesses
+          Computer Sales, Repairs & <span class="text-gradient">IT Support</span>
         </h1>
         <p class="hero-tagline-text">
-          "Share your requirement, and our team will provide the best solution at a competitive price."
+          Professional Computer & IT Sales and Services for Homes, Offices, Schools & Businesses.<br>
+          Share your requirement, and our team will provide the best solution at a competitive price.
         </p>
         <a href="#quote-form" class="hero-cta-btn">
           <span>Request a Quote Now</span>
           <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
         </a>
       </div>
-      <div class="hero-image-container">
-        <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&fit=crop&w=800&q=80" 
-             alt="IT Support and Computer Repair Specialist" 
-             class="hero-image" 
-             loading="lazy">
+      
+      <div class="hero-image-wrapper">
+        <!-- Modern Isometric SVG Tech Illustration -->
+        <svg class="hero-tech-svg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#06b6d4" />
+              <stop offset="100%" stop-color="#2563eb" />
+            </linearGradient>
+            <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          
+          <g opacity="0.08">
+            <circle cx="50" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="100" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="150" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="200" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="250" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="300" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="350" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="400" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="450" cy="50" r="1.5" fill="#94a3b8" />
+            <circle cx="50" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="100" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="150" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="200" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="250" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="300" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="350" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="400" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="450" cy="100" r="1.5" fill="#94a3b8" />
+            <circle cx="50" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="100" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="150" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="200" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="250" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="300" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="350" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="400" cy="150" r="1.5" fill="#94a3b8" />
+            <circle cx="450" cy="150" r="1.5" fill="#94a3b8" />
+          </g>
+          
+          <!-- Isometric server stacks -->
+          <path d="M 380,180 L 460,140 L 380,100 L 300,140 Z" fill="#0d1527" stroke="url(#glow-grad)" stroke-width="2" />
+          <path d="M 300,140 L 300,170 L 380,210 L 380,180 Z" fill="#0c1122" stroke="url(#glow-grad)" stroke-width="2" />
+          <path d="M 380,180 L 380,210 L 460,170 L 460,140 Z" fill="#131a30" stroke="url(#glow-grad)" stroke-width="2" />
+          
+          <path d="M 380,240 L 460,200 L 380,160 L 300,200 Z" fill="#0d1527" stroke="url(#glow-grad)" stroke-width="2" />
+          <path d="M 300,200 L 300,230 L 380,270 L 380,240 Z" fill="#0c1122" stroke="url(#glow-grad)" stroke-width="2" />
+          <path d="M 380,240 L 380,270 L 460,230 L 460,200 Z" fill="#131a30" stroke="url(#glow-grad)" stroke-width="2" />
+          
+          <circle cx="330" cy="165" r="3" fill="#06b6d4" filter="url(#glow-effect)" />
+          <circle cx="350" cy="175" r="3" fill="#10b981" />
+          <circle cx="330" cy="225" r="3" fill="#06b6d4" filter="url(#glow-effect)" />
+          <circle cx="350" cy="235" r="3" fill="#10b981" />
+
+          <path d="M 300,140 L 220,100 L 120,150" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4, 4" />
+          <path d="M 380,270 L 380,310 L 250,370" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          
+          <!-- Modern Flat Screen Monitor -->
+          <rect x="80" y="140" width="200" height="130" rx="8" fill="#0c1122" stroke="url(#glow-grad)" stroke-width="2" />
+          <path d="M 150,270 L 130,310 L 230,310 L 210,270 Z" fill="#0d1527" stroke="url(#glow-grad)" stroke-width="2" />
+          <path d="M 95,155 L 265,155" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
+          <circle cx="100" cy="245" r="4" fill="#ef4444" />
+          <circle cx="112" cy="245" r="4" fill="#fbbf24" />
+          <circle cx="124" cy="245" r="4" fill="#10b981" />
+          
+          <!-- CCTV Camera Symbol -->
+          <g transform="translate(60, 60)" filter="url(#glow-effect)">
+            <circle cx="30" cy="30" r="20" fill="rgba(6, 182, 212, 0.05)" stroke="#06b6d4" stroke-width="1.5" />
+            <rect x="20" y="24" width="18" height="10" rx="2" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+            <path d="M 38,26 L 44,22 L 44,36 L 38,32 Z" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+            <circle cx="25" cy="29" r="1.5" fill="#ef4444" />
+          </g>
+
+          <!-- Network Waves -->
+          <path d="M 230,80 A 40,40 0 0,1 270,120" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" opacity="0.3" />
+          <path d="M 220,70 A 60,60 0 0,1 280,130" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+          <path d="M 210,60 A 80,80 0 0,1 290,140" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" filter="url(#glow-effect)" />
+
+          <!-- Gear symbol -->
+          <g transform="translate(180, 200)">
+            <circle cx="20" cy="20" r="8" fill="none" stroke="#2563eb" stroke-width="2" />
+            <path d="M 20,6 L 20,10 M 20,30 L 20,34 M 6,20 L 10,20 M 30,20 L 34,20" stroke="#2563eb" stroke-width="2" stroke-linecap="round" />
+          </g>
+        </svg>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services-section">
+  <section id="services" class="services-section reveal">
     <div class="container">
       <div class="section-header">
         <h2>Our Services</h2>
@@ -820,82 +1076,151 @@
   </section>
 
   <!-- Why Choose Us Section -->
-  <section id="why-choose-us" class="why-choose-us">
-    <div class="container why-choose-us-container">
-      <div class="why-choose-us-content">
-        <div class="section-header" style="text-align: left; margin: 0 0 2rem 0;">
-          <h2>Why Choose Us?</h2>
-          <p>We pride ourselves on offering premium quality, speed, and reliability to keep you connected.</p>
+  <section id="why-choose-us" class="why-choose-us reveal">
+    <div class="container">
+      
+      <!-- Stats Strip -->
+      <div class="stats-strip">
+        <div class="stat-item">
+          <span class="stat-number">[500+]</span>
+          <span class="stat-label">Devices Serviced</span>
         </div>
-
-        <div class="trust-grid">
-          <!-- 1 -->
-          <div class="trust-card">
-            <div class="checkmark-container">
-              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
-            </div>
-            <span class="trust-title">Experienced & Skilled Technicians</span>
-          </div>
-          <!-- 2 -->
-          <div class="trust-card">
-            <div class="checkmark-container">
-              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
-            </div>
-            <span class="trust-title">Genuine Products</span>
-          </div>
-          <!-- 3 -->
-          <div class="trust-card">
-            <div class="checkmark-container">
-              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
-            </div>
-            <span class="trust-title">Fast & Reliable Service</span>
-          </div>
-          <!-- 4 -->
-          <div class="trust-card">
-            <div class="checkmark-container">
-              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
-            </div>
-            <span class="trust-title">Affordable Pricing</span>
-          </div>
-          <!-- 5 -->
-          <div class="trust-card">
-            <div class="checkmark-container">
-              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
-            </div>
-            <span class="trust-title">On-Time Support</span>
-          </div>
-          <!-- 6 -->
-          <div class="trust-card">
-            <div class="checkmark-container">
-              <i data-lucide="check" style="width: 18px; height: 18px;"></i>
-            </div>
-            <span class="trust-title">Customer Satisfaction is Our Priority</span>
-          </div>
+        <div class="stat-item">
+          <span class="stat-number">[10+]</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">[24/7]</span>
+          <span class="stat-label">Support Response</span>
         </div>
       </div>
-      <div class="why-choose-us-image-container">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
-             alt="Skilled technical customer support staff working on device" 
-             class="why-choose-us-image" 
-             loading="lazy">
+
+      <div class="section-header">
+        <h2>Why Choose Us?</h2>
+        <p>We pride ourselves on offering premium quality, speed, and reliability to keep you connected.</p>
+      </div>
+
+      <div class="trust-grid">
+        <!-- 1 -->
+        <div class="trust-card">
+          <div class="checkmark-container">
+            <i data-lucide="users" style="width: 20px; height: 20px;"></i>
+          </div>
+          <h3 class="trust-title">Experienced Technicians</h3>
+          <p class="trust-desc">Certified IT professionals handle every diagnostic and repair with precision.</p>
+        </div>
+        <!-- 2 -->
+        <div class="trust-card">
+          <div class="checkmark-container">
+            <i data-lucide="shield-check" style="width: 20px; height: 20px;"></i>
+          </div>
+          <h3 class="trust-title">Genuine Products</h3>
+          <p class="trust-desc">We source and install only authentic, manufacturer-approved hardware and spares.</p>
+        </div>
+        <!-- 3 -->
+        <div class="trust-card">
+          <div class="checkmark-container">
+            <i data-lucide="zap" style="width: 20px; height: 20px;"></i>
+          </div>
+          <h3 class="trust-title">Fast & Reliable Service</h3>
+          <p class="trust-desc">Quick diagnostics and swift turnaround times to minimize your downtime.</p>
+        </div>
+        <!-- 4 -->
+        <div class="trust-card">
+          <div class="checkmark-container">
+            <i data-lucide="banknote" style="width: 20px; height: 20px;"></i>
+          </div>
+          <h3 class="trust-title">Affordable Pricing</h3>
+          <p class="trust-desc">Upfront quotes with competitive rates and absolutely no hidden expenses.</p>
+        </div>
+        <!-- 5 -->
+        <div class="trust-card">
+          <div class="checkmark-container">
+            <i data-lucide="clock" style="width: 20px; height: 20px;"></i>
+          </div>
+          <h3 class="trust-title">On-Time Support</h3>
+          <p class="trust-desc">Scheduled appointments and emergency call-outs executed strictly on schedule.</p>
+        </div>
+        <!-- 6 -->
+        <div class="trust-card">
+          <div class="checkmark-container">
+            <i data-lucide="smile" style="width: 20px; height: 20px;"></i>
+          </div>
+          <h3 class="trust-title">Customer Satisfaction</h3>
+          <p class="trust-desc">Your business and peace of mind are at the center of everything we do.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Google Form Custom Submission Section -->
-  <section id="quote-form" class="form-section">
-    <div class="container">
-      <h2 class="form-heading">Tell Us What You Need</h2>
-      <div class="form-card">
+  <section id="quote-form" class="form-section reveal">
+    <div class="container form-container-grid">
+      
+      <!-- Left Column: Support Illustration -->
+      <div class="form-illustration-wrapper">
+        <h2 class="form-heading">Tell Us What You Need</h2>
+        <p class="form-subtext">
+          Have an inquiry or custom request? Fill out our quote form and our technical support team will evaluate your requirements and reach out with a competitive pricing quote.
+        </p>
         
+        <!-- Tech Support Illustration SVG -->
+        <svg class="form-illustration-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="support-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#06b6d4" />
+              <stop offset="100%" stop-color="#2563eb" />
+            </linearGradient>
+            <filter id="support-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <circle cx="200" cy="200" r="160" fill="rgba(6, 182, 212, 0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+          
+          <rect x="60" y="80" width="120" height="60" rx="12" fill="#0d1527" stroke="url(#support-grad)" stroke-width="1.5" />
+          <path d="M 120,140 L 120,155 L 135,140 Z" fill="#0d1527" stroke="url(#support-grad)" stroke-width="1.5" />
+          <rect x="80" y="98" width="80" height="6" rx="3" fill="rgba(255,255,255,0.2)" />
+          <rect x="80" y="112" width="50" height="6" rx="3" fill="rgba(6, 182, 212, 0.4)" />
+          
+          <rect x="230" y="260" width="110" height="50" rx="12" fill="#0d1527" stroke="#10b981" stroke-width="1.5" filter="url(#support-glow)" />
+          <path d="M 280,310 L 280,325 L 295,310 Z" fill="#0d1527" stroke="#10b981" stroke-width="1.5" />
+          <circle cx="255" cy="285" r="8" fill="rgba(16, 185, 129, 0.1)" />
+          <path d="M 251,285 L 254,288 L 260,282" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="272" y="282" width="50" height="6" rx="3" fill="rgba(255,255,255,0.2)" />
+          
+          <g transform="translate(110, 110)">
+            <path d="M 30,150 C 30,120 60,110 90,110 C 120,110 150,120 150,150" stroke="url(#support-grad)" stroke-width="2" stroke-linecap="round" fill="none" />
+            <path d="M 80,105 L 80,120 M 100,105 L 100,120" stroke="url(#support-grad)" stroke-width="2" />
+            <circle cx="90" cy="65" r="40" fill="#0c1122" stroke="url(#support-grad)" stroke-width="2" />
+            <path d="M 50,65 A 40,40 0 0,1 130,65" fill="none" stroke="#94a3b8" stroke-width="4" />
+            <rect x="46" y="55" width="8" height="20" rx="4" fill="#06b6d4" />
+            <rect x="126" y="55" width="8" height="20" rx="4" fill="#06b6d4" />
+            <path d="M 50,70 L 75,90 M 75,90 L 80,90" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" fill="none" />
+            <circle cx="82" cy="90" r="3" fill="#06b6d4" filter="url(#support-glow)" />
+            <path d="M 68,60 H 84 M 96,60 H 112 M 84,60 C 88,60 92,60 96,60" stroke="#06b6d4" stroke-width="1.5" />
+            <rect x="68" y="54" width="16" height="12" rx="2" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+            <rect x="96" y="54" width="16" height="12" rx="2" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+          </g>
+          
+          <path d="M 120,320 L 70,350" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3, 3" />
+          <circle cx="70" cy="350" r="3" fill="#2563eb" />
+          
+          <path d="M 280,70 L 330,40" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="3, 3" />
+          <circle cx="330" cy="40" r="3" fill="#06b6d4" />
+        </svg>
+      </div>
+
+      <!-- Right Column: Quote Form Card -->
+      <div class="form-card">
         <!-- Custom Thank You Card (Initially Hidden) -->
         <div id="thank-you-card" class="thankyou-card" style="display: none;">
-          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--emerald-50); color: var(--emerald-500); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: rgba(16, 185, 129, 0.08); color: var(--accent-green); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
             <i data-lucide="check" style="width: 36px; height: 36px; stroke-width: 3;"></i>
           </div>
-          <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--slate-900);">Request Submitted!</h3>
-          <p style="color: var(--slate-600); max-width: 480px; margin: 0 auto 2rem auto; font-size: 1rem; line-height: 1.6;">
-            Thank you for choosing StudyZone365. Your requirement has been successfully registered. Our team will review the details and provide the best solution at a competitive price.
+          <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--text-main); font-family: var(--font-heading);">Request Submitted!</h3>
+          <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2rem auto; font-size: 1rem; line-height: 1.6;">
+            Thank you for choosing Arzon Technologies. Your requirement has been successfully registered. Our team will review the details and provide the best solution at a competitive price.
           </p>
           <button onclick="resetQuoteForm()" class="form-submit-btn" style="box-shadow: none;">
             <i data-lucide="rotate-ccw" style="width: 18px; height: 18px;"></i>
@@ -1004,25 +1329,50 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-content">
-      <div class="footer-logo">StudyZone365</div>
-      <p class="footer-desc">
-        We provide professional Computer & IT Sales and Services for homes, offices, schools, and businesses.
-      </p>
-      
-      <div class="footer-email-box">
-        <span class="footer-email-label">Send Us an Email</span>
-        <a href="mailto:studyzone365.com@gmail.com" class="footer-email">studyzone365.com@gmail.com</a>
+    <div class="container">
+      <div class="footer-columns">
+        
+        <!-- Column 1: About -->
+        <div class="footer-col footer-desc-col">
+          <div class="footer-logo-text">Arzon Technologies</div>
+          <p>
+            We provide professional Computer & IT Sales and Services for homes, offices, schools, and businesses.
+          </p>
+          <p class="footer-thankyou" style="margin-top: 0; padding-top: 0;">
+            Thank you for choosing Arzon Technologies. We look forward to serving you!
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <span class="footer-title">Services</span>
+          <ul class="footer-links">
+            <li><a href="#services">IT Sales & Hardware</a></li>
+            <li><a href="#services">Computer Repairs</a></li>
+            <li><a href="#services">CCTV Surveillance</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+          </ul>
+        </div>
+
+
       </div>
 
-      <p class="footer-thankyou">
-        Thank you for choosing StudyZone365. We look forward to serving you!
-      </p>
-
-      <div class="footer-divider"></div>
-      
-      <div class="footer-copyright">
-        &copy; 2026 StudyZone365. All rights reserved.
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Arzon Technologies. All rights reserved.
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Facebook">
+            <i data-lucide="facebook" style="width: 16px; height: 16px;"></i>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="Twitter">
+            <i data-lucide="twitter" style="width: 16px; height: 16px;"></i>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+            <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
@@ -1095,6 +1445,26 @@
       } else {
         header.classList.remove('scrolled');
       }
+    });
+
+    // Scroll Reveal Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
     });
   </script>
 </body>
