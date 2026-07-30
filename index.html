@@ -1,50 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arzon Technologies | Professional Computer & IT Sales and Services</title>
-  <meta name="description" content="Arzon Technologies provides professional computer, laptop, printer, and CCTV sales, repairs, and IT support for homes, offices, schools, and businesses.">
-  
+  <title>Arzon Technologies | Professional Computer Repairs & IT Support</title>
+  <meta name="description"
+    content="Arzon Technologies provides professional computer, laptop, printer, and CCTV sales, repairs, and IT support for homes, offices, schools, and businesses.">
+
   <!-- Google Fonts - Sora & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* SaaS Deep Navy / Electric Blue Palette */
+    /* Light Theme & Spacing System */
     :root {
-      --bg-main: #060913;        /* Extremely deep navy */
-      --bg-card: #0c1122;        /* Lighter navy for cards */
-      --bg-card-hover: #12182e;  /* Card hover background */
-      --primary: #2563eb;        /* Electric blue primary */
-      --primary-hover: #1d4ed8;
-      --accent: #06b6d4;         /* Cyan brand accent color */
-      --accent-green: #10b981;   /* Success green */
-      --text-main: #f8fafc;      /* Off-white */
-      --text-muted: #94a3b8;     /* Slate-400 muted text */
-      --border-color: rgba(255, 255, 255, 0.06);
-      --border-hover: rgba(6, 182, 212, 0.25);
-      
+      /* Colors */
+      --bg-main: #FAFAFA;
+      /* Base background */
+      --bg-alt: #F3F4F6;
+      /* Alternating section background */
+      --bg-card: #FFFFFF;
+      /* Card surface */
+      --bg-card-hover: #FFFFFF;
+      --primary: #1E40AF;
+      /* Dark blue primary */
+      --primary-hover: #1D4ED8;
+      --accent: #0891B2;
+      /* Dark cyan brand accent */
+      --accent-hover: #0E7490;
+      --accent-green: #059669;
+      /* Success green */
+      --text-main: #1A1A1A;
+      /* Headings */
+      --text-muted: #4B5563;
+      /* Body text */
+      --border-color: #E5E7EB;
+      /* Soft gray border */
+      --border-hover: #0891B2;
+      /* Accent hover border */
+
+      /* Spacing System */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-xxl: 64px;
+      --space-huge: 96px;
+
+      --section-pad-desktop: var(--space-huge) 0;
+      --section-pad-mobile: 56px 0;
+
+      --container-max-width: 1300px;
+      /* Wider container to reduce left/right blank space */
+      --container-padding: 0 var(--space-md);
+
       /* Font pairings */
       --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      
+
       /* Shadows */
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
-      --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.5);
-      --shadow-accent-glow: 0 0 25px rgba(6, 182, 212, 0.2);
-      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+      --shadow-accent-glow: 0 0 20px rgba(8, 145, 178, 0.12);
+
       --transition-all: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* CSS Reset */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -59,12 +94,17 @@
     }
 
     body {
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
+      font-size: 20px;
+      /* Increased from 18px */
     }
 
     /* Typography Utilities */
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       font-family: var(--font-heading);
       font-weight: 700;
       color: var(--text-main);
@@ -73,13 +113,30 @@
 
     p {
       color: var(--text-muted);
+      font-size: 20px;
+      /* Increased from 18px */
+    }
+
+    /* Marker Highlight Effect */
+    .highlight-text {
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(8, 145, 178, 0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
     /* Layout Containers */
     .container {
-      max-width: 1200px;
+      max-width: var(--container-max-width);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: var(--container-padding);
+    }
+
+    section,
+    .hero-form-wrapper {
+      scroll-margin-top: 90px;
+      /* Offset scroll position to account for the sticky header */
     }
 
     /* Sticky Header */
@@ -87,7 +144,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: rgba(6, 9, 19, 0.7);
+      background-color: rgba(250, 250, 250, 0.8);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
@@ -95,9 +152,9 @@
     }
 
     header.scrolled {
-      padding: 0.25rem 0;
-      background-color: rgba(6, 9, 19, 0.85);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      padding: 4px 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-sm);
     }
 
     .header-nav {
@@ -105,6 +162,17 @@
       justify-content: space-between;
       align-items: center;
       height: 75px;
+    }
+
+    .scroll-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+      z-index: 101;
+      transition: width 0.1s ease-out;
     }
 
     .logo-container {
@@ -121,10 +189,6 @@
       letter-spacing: -0.04em;
     }
 
-    .logo-text::after {
-      content: '.';
-      color: var(--accent);
-    }
 
     .header-cta {
       display: inline-flex;
@@ -132,8 +196,8 @@
       justify-content: center;
       padding: 0.625rem 1.25rem;
       background-color: transparent;
-      color: var(--text-main);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--accent);
+      border: 1px solid var(--accent);
       text-decoration: none;
       font-size: 0.875rem;
       font-weight: 600;
@@ -142,29 +206,29 @@
     }
 
     .header-cta:hover {
-      background-color: var(--primary);
-      border-color: var(--primary);
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+      background-color: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(8, 145, 178, 0.15);
       transform: translateY(-1px);
     }
 
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 9rem 0 7rem 0;
-      background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
-                  radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 45%);
+      padding: var(--space-md) 0 var(--space-huge) 0; /* Reduced top padding to 24px to eliminate space above tagline */
+      background: radial-gradient(circle at 10% 20%, rgba(8, 145, 178, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(30, 64, 175, 0.03) 0%, transparent 50%);
       overflow: hidden;
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* Floating blobs for SaaS-style depth */
+    /* Subtle light blobs */
     .glowing-blob {
       position: absolute;
       width: 450px;
       height: 450px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0) 70%);
+      background: radial-gradient(circle, rgba(8, 145, 178, 0.05) 0%, rgba(8, 145, 178, 0) 70%);
       filter: blur(50px);
       z-index: -1;
       pointer-events: none;
@@ -186,18 +250,34 @@
       0% {
         transform: translate(0, 0) scale(1);
       }
+
       50% {
         transform: translate(40px, -60px) scale(1.15);
       }
+
       100% {
         transform: translate(-30px, 30px) scale(0.9);
       }
     }
 
+    .hero-ghost-text {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(8, 145, 178, 0.08);
+      margin-bottom: var(--space-sm);
+      pointer-events: none;
+      user-select: none;
+    }
+
     .hero-container {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 4rem;
+      gap: var(--space-xl);
       align-items: center;
     }
 
@@ -210,24 +290,24 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.45rem 1.15rem;
-      background: rgba(6, 182, 212, 0.06);
-      border: 1px solid rgba(6, 182, 212, 0.15);
+      background: rgba(8, 145, 178, 0.05);
+      border: 1px solid rgba(8, 145, 178, 0.15);
       color: var(--accent);
       font-size: 0.8rem;
       font-weight: 700;
       border-radius: 9999px;
-      margin-bottom: 2rem;
+      margin-bottom: var(--space-sm);
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .hero-headline {
-      font-size: 3.5rem;
-      line-height: 1.15;
+      font-size: clamp(48px, 6vw, 76px); /* Fluid typography up to 76px */
+      line-height: 1.08;
       letter-spacing: -0.04em;
       font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 1.5rem;
+      margin-bottom: var(--space-sm);
     }
 
     .text-gradient {
@@ -237,9 +317,9 @@
     }
 
     .hero-tagline-text {
-      font-size: 1.2rem;
+      font-size: 20px;
       color: var(--text-muted);
-      margin-bottom: 3rem;
+      margin-bottom: var(--space-lg);
       font-weight: 450;
       line-height: 1.7;
     }
@@ -250,19 +330,19 @@
       gap: 0.75rem;
       padding: 1rem 2.5rem;
       background-color: var(--accent);
-      color: #060913;
+      color: #FFFFFF;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 700;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(8, 145, 178, 0.15);
       transition: var(--transition-all);
     }
 
     .hero-cta-btn:hover {
-      background-color: #22d3ee;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.45);
+      background-color: var(--accent-hover);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(8, 145, 178, 0.3);
     }
 
     .hero-cta-btn svg {
@@ -283,26 +363,39 @@
       width: 100%;
       max-width: 460px;
       height: auto;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.08));
     }
 
     /* Services Section */
     .services-section {
-      padding: 8rem 0;
-      background: linear-gradient(180deg, var(--bg-main) 0%, #0d1223 100%);
+      padding: var(--section-pad-desktop);
+      background: var(--bg-main);
       border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-eyebrow {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: var(--space-xs);
     }
 
     .section-header {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 5rem auto;
+      margin: 0 auto var(--space-md) auto; /* Reduced margin-bottom to pull content closer */
+      position: relative;
     }
 
     .section-header h2 {
-      font-size: 2.75rem;
-      margin-bottom: 1rem;
+      font-size: 40px;
+      margin-bottom: var(--space-xs);
       letter-spacing: -0.03em;
+      font-weight: 800;
+      color: var(--text-main);
     }
 
     .section-header p {
@@ -310,28 +403,66 @@
       color: var(--text-muted);
     }
 
+    /* Eyebrow decorative line */
+    .section-header::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: var(--space-sm) auto 0 auto;
+      border-radius: 2px;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: var(--space-md);
     }
 
     .service-card {
-      background: rgba(19, 26, 48, 0.4);
+      background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 20px;
-      padding: 3rem 2rem;
+      padding: var(--space-lg);
+      /* Uniform 32px padding */
       transition: var(--transition-all);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      padding: 1.5px; /* Border thickness */
+      background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+      -webkit-mask: 
+         linear-gradient(#fff 0 0) content-box, 
+         linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      opacity: 0;
+      transition: var(--transition-all);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
     }
 
     .service-card:hover {
-      background: rgba(19, 26, 48, 0.7);
-      transform: translateY(-8px);
-      border-color: var(--border-hover);
+      background: var(--bg-card);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-lg), var(--shadow-accent-glow);
     }
 
@@ -339,27 +470,27 @@
       width: 56px;
       height: 56px;
       border-radius: 12px;
-      background-color: rgba(6, 182, 212, 0.08);
+      background-color: rgba(8, 145, 178, 0.08);
       color: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.75rem;
+      margin-bottom: var(--space-sm);
       transition: var(--transition-all);
-      box-shadow: 0 2px 8px rgba(6, 182, 212, 0.04);
+      box-shadow: 0 2px 8px rgba(8, 145, 178, 0.04);
     }
 
     .service-card:hover .service-icon-box {
       background-color: var(--accent);
-      color: #060913;
+      color: #FFFFFF;
       transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+      box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .service-title {
       font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: var(--space-lg);
       color: var(--text-main);
     }
 
@@ -371,8 +502,9 @@
 
     /* Why Choose Us Section */
     .why-choose-us {
-      padding: 8rem 0;
-      background: linear-gradient(180deg, #0d1223 0%, var(--bg-main) 100%);
+      padding: var(--section-pad-desktop);
+      background: var(--bg-alt);
+      /* Alternate section background */
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -380,19 +512,34 @@
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      background: rgba(19, 26, 48, 0.5);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 3rem;
-      margin-bottom: 6rem;
-      text-align: center;
+      gap: var(--space-md);
+      margin-bottom: 100px;
+      /* Increased margin to put more space above the Why Choose Us heading */
     }
 
     .stat-item {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-all);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-icon {
+      color: var(--accent);
+      margin-bottom: var(--space-xs);
     }
 
     .stat-number {
@@ -400,7 +547,7 @@
       font-size: 3.5rem;
       font-weight: 800;
       color: var(--accent);
-      line-height: 1;
+      line-height: 1.1;
       letter-spacing: -0.04em;
     }
 
@@ -415,38 +562,53 @@
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: var(--space-md);
     }
 
     .trust-card {
-      background: rgba(19, 26, 48, 0.3);
+      background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      padding: 2rem;
+      padding: var(--space-lg);
+      /* 32px padding */
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1.25rem;
+      gap: var(--space-sm);
       transition: var(--transition-all);
+      box-shadow: var(--shadow-sm);
     }
 
     .trust-card:hover {
-      background: rgba(19, 26, 48, 0.6);
+      background: var(--bg-card);
       transform: translateY(-4px);
-      border-color: rgba(16, 185, 129, 0.3);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-lg);
     }
 
     .checkmark-container {
       flex-shrink: 0;
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background-color: rgba(16, 185, 129, 0.08);
+      background-color: rgba(5, 150, 105, 0.08);
       color: var(--accent-green);
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: var(--transition-all);
+    }
+
+    .trust-card:hover .checkmark-container {
+      background-color: var(--accent-green);
+      color: #FFFFFF;
+      transform: scale(1.1) rotate(360deg); /* 360-degree rotation animation on hover */
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    }
+
+    .checkmark-container svg {
+      width: 24px;
+      height: 24px;
     }
 
     .trust-title {
@@ -457,14 +619,14 @@
     }
 
     .trust-desc {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* Custom HTML Form Section */
     .form-section {
-      padding: 8rem 0 4rem 0;
+      padding: var(--section-pad-desktop);
       background: var(--bg-main);
       position: relative;
       z-index: 5;
@@ -473,7 +635,7 @@
     .form-container-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
+      gap: var(--space-xl);
       align-items: center;
     }
 
@@ -486,30 +648,70 @@
 
     .form-heading {
       font-size: 2.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: var(--space-sm);
       letter-spacing: -0.03em;
     }
 
     .form-subtext {
       font-size: 1.1rem;
       color: var(--text-muted);
-      margin-bottom: 3rem;
+      margin-bottom: var(--space-md); /* Reduced margin-bottom to pull form grid closer */
       line-height: 1.6;
+    }
+
+    /* Device Tags for Interactive Form Selection */
+    .device-tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-top: 4px;
+    }
+
+    .device-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.55rem 1.15rem;
+      background-color: #F3F4F6;
+      border: 1px solid #D1D5DB;
+      border-radius: 9999px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-all);
+    }
+
+    .device-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: rgba(8, 145, 178, 0.04);
+      transform: translateY(-1px);
+    }
+
+    .device-tag.active {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(8, 145, 178, 0.18);
+      transform: translateY(-1px);
     }
 
     .form-illustration-svg {
       width: 100%;
       max-width: 420px;
       height: auto;
-      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.05));
     }
 
     .form-card {
-      background: #0c1122;
+      background: var(--bg-card);
       border-radius: 24px;
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow-xl);
-      padding: 2.25rem 2rem;
+      padding: var(--space-lg);
+      /* 32px padding */
       position: relative;
       overflow: hidden;
       border-top: 4px solid var(--accent);
@@ -519,13 +721,13 @@
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: var(--space-sm);
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: var(--space-xs);
     }
 
     .form-group.full-width {
@@ -549,8 +751,8 @@
     .form-input {
       width: 100%;
       padding: 0.85rem 1.15rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid #D1D5DB;
+      background-color: #F9FAFB;
       border-radius: 8px;
       font-family: inherit;
       font-size: 0.95rem;
@@ -561,17 +763,17 @@
     .form-input:focus {
       outline: none;
       border-color: var(--accent);
-      background-color: rgba(255, 255, 255, 0.06);
-      box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+      background-color: #FFFFFF;
+      box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.15);
     }
 
     .form-input::placeholder {
-      color: rgba(255, 255, 255, 0.25);
+      color: #9CA3AF;
     }
 
     select.form-input {
       appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234B5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
       background-repeat: no-repeat;
       background-position: right 1.15rem center;
       background-size: 1rem;
@@ -579,7 +781,7 @@
     }
 
     select.form-input option {
-      background-color: #0c1122;
+      background-color: #FFFFFF;
       color: var(--text-main);
     }
 
@@ -591,7 +793,7 @@
     .form-submit-container {
       display: flex;
       justify-content: center;
-      margin-top: 1.5rem;
+      margin-top: var(--space-sm);
     }
 
     .form-submit-btn {
@@ -601,57 +803,76 @@
       gap: 0.75rem;
       padding: 1rem 3rem;
       background-color: var(--accent);
-      color: #060913;
+      color: #FFFFFF;
       border: none;
       font-size: 1rem;
       font-weight: 700;
       border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
+      box-shadow: 0 4px 20px rgba(8, 145, 178, 0.15);
       transition: var(--transition-all);
     }
 
     .form-submit-btn:disabled {
-      background-color: rgba(255, 255, 255, 0.08);
-      color: var(--text-muted);
+      background-color: #E5E7EB;
+      color: #9CA3AF;
       cursor: not-allowed;
       box-shadow: none;
     }
 
     .form-submit-btn:hover:not(:disabled) {
-      background-color: #22d3ee;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.45);
+      background-color: var(--accent-hover);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(8, 145, 178, 0.3);
     }
 
     .thankyou-card {
       text-align: center;
-      padding: 3rem 1.5rem;
+      padding: var(--space-lg) var(--space-sm);
       animation: fadeIn 0.4s ease-out;
     }
 
     /* Footer Section */
     footer {
-      background-color: #03050a;
+      background-color: var(--bg-alt);
+      /* Alternating light gray footer */
       color: var(--text-main);
-      padding: 5rem 0 2rem 0;
+      padding: var(--space-huge) 0 0 0;
       border-top: 1px solid var(--border-color);
       position: relative;
       z-index: 1;
+      overflow: hidden;
+      /* Prevent absolute-positioned background blobs from creating extra space below the footer */
     }
 
     .footer-columns {
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 4rem;
-      margin-bottom: 4rem;
+      grid-template-columns: 1fr 1.8fr 1fr; /* Custom widths to even out the space and give the centered About text room */
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
     }
 
     .footer-col {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: var(--space-sm);
+      /* 16px spacing */
+    }
+
+    .footer-col-center {
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 769px) {
+      .footer-col-right {
+        align-items: flex-end;
+        text-align: right;
+      }
+      .footer-col-right .footer-links {
+        align-items: flex-end;
+      }
     }
 
     .footer-title {
@@ -661,6 +882,7 @@
       color: var(--text-main);
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      margin-bottom: var(--space-xs);
     }
 
     .footer-logo-text {
@@ -671,10 +893,6 @@
       letter-spacing: -0.04em;
     }
 
-    .footer-logo-text::after {
-      content: '.';
-      color: var(--accent);
-    }
 
     .footer-desc-col {
       color: var(--text-muted);
@@ -686,7 +904,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: var(--space-xs);
     }
 
     .footer-links a {
@@ -704,13 +922,13 @@
     .footer-contact-info {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: var(--space-xs);
     }
 
     .footer-contact-item {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: var(--space-xs);
       color: var(--text-muted);
       font-size: 0.95rem;
     }
@@ -726,29 +944,17 @@
       color: var(--accent);
     }
 
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 2rem;
-    }
-
-    .footer-copyright {
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.3);
-    }
-
     .footer-socials {
       display: flex;
-      gap: 1.25rem;
+      gap: var(--space-xs);
+      align-items: center;
     }
 
     .social-icon-btn {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-color);
       color: var(--text-muted);
       display: flex;
       align-items: center;
@@ -757,11 +963,35 @@
       text-decoration: none;
     }
 
+    .social-icon-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      transition: var(--transition-all);
+    }
+
     .social-icon-btn:hover {
       border-color: var(--accent);
-      color: var(--accent);
-      background-color: rgba(6, 182, 212, 0.05);
-      transform: translateY(-2px);
+      color: #FFFFFF;
+      background-color: var(--accent);
+      transform: translateY(-2px) scale(1.1);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: center;
+      /* Centered copyright text */
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding: var(--space-lg) 0;
+      margin-top: var(--space-lg);
+    }
+
+    .footer-copyright {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: center;
     }
 
     /* Scroll Reveal System */
@@ -780,26 +1010,37 @@
     @media (max-width: 1024px) {
       .hero-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: var(--space-xl);
         text-align: center;
       }
+
       .hero-content {
         text-align: center;
       }
+
       .hero-image-wrapper {
         max-width: 420px;
         margin: 0 auto;
       }
+
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .trust-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+      }
+
       .form-container-grid {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: var(--space-xl);
       }
+
       .form-illustration-wrapper {
         align-items: center;
         text-align: center;
@@ -808,49 +1049,90 @@
 
     @media (max-width: 768px) {
       .hero-headline {
-        font-size: 2.5rem;
+        font-size: 32px;
       }
+
+      .hero-tagline-text {
+        font-size: 18px;
+        margin-bottom: var(--space-lg);
+      }
+
+      .hero {
+        padding: var(--section-pad-mobile);
+      }
+
+      .services-section {
+        padding: var(--section-pad-mobile);
+      }
+
+      .why-choose-us {
+        padding: var(--section-pad-mobile);
+      }
+
+      .section-header h2 {
+        font-size: 28px;
+      }
+
       .services-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: var(--space-md);
       }
+
       .stats-strip {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
-        padding: 2.5rem 1.5rem;
-        margin-bottom: 4rem;
+        gap: var(--space-md);
+        margin-bottom: var(--space-lg);
       }
+
       .trust-grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: var(--space-md);
       }
+
       .form-card {
-        padding: 2.5rem 1.5rem;
+        padding: var(--space-md);
         border-radius: 16px;
       }
+
       .form-grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: var(--space-sm);
       }
+
       .form-group.full-width {
         grid-column: span 1;
       }
+
       footer {
-        padding: 5rem 0 2rem 0;
+        padding: 56px 0 0 0;
       }
+
       .footer-columns {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        margin-bottom: 3rem;
+        flex-direction: column;
+        gap: var(--space-lg);
+        margin-bottom: var(--space-lg);
       }
-      .footer-bottom {
-        flex-direction: column-reverse;
-        gap: 1.5rem;
+
+      .footer-col {
         align-items: center;
+        text-align: center;
+      }
+
+      .footer-links {
+        align-items: center;
+      }
+
+      .footer-contact-info {
+        align-items: center;
+      }
+
+      .footer-bottom {
+        padding: var(--space-lg) 0;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Sticky Header -->
@@ -859,8 +1141,10 @@
       <a href="#" class="logo-container" aria-label="Arzon Technologies Home">
         <span class="logo-text">Arzon Technologies</span>
       </a>
-      <a href="#quote-form" class="header-cta">Request a Quote</a>
+      <a href="#quote-form" class="header-cta">Get in Touch</a>
     </div>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
   </header>
 
   <!-- Hero Section -->
@@ -868,20 +1152,25 @@
     <!-- Glowing background blobs -->
     <div class="glowing-blob blob-1"></div>
     <div class="glowing-blob blob-2"></div>
-    
+
     <div class="container hero-container">
       <div class="hero-content">
+        <!-- <div class="hero-ghost-text">ARZON TECHNOLOGIES</div> -->
         <span class="hero-tagline">
           <i data-lucide="zap" style="width: 14px; height: 14px; fill: currentColor;"></i>
           <span>Professional IT Support</span>
         </span>
         <h1 class="hero-headline">
-          Computer Sales, Repairs & <span class="text-gradient">IT Support</span>
+          Computer Repairs & <span class="text-gradient">IT Support</span>
         </h1>
-        <p class="hero-tagline-text" style="margin-bottom: 2rem;">
+        <p class="hero-tagline-text"
+          style="margin-bottom: var(--space-sm); font-weight: 600; color: var(--accent); font-size: 1.25rem;">
+          Same-Day Repairs &middot; Genuine Parts &middot; On-Site IT Support
+        </p>
+        <p style="margin-bottom: var(--space-lg); color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
           Professional Computer & IT Sales and Services for Homes, Offices, Schools & Businesses.
         </p>
-        
+
         <div class="hero-image-wrapper">
           <!-- Modern Isometric SVG Tech Illustration -->
           <svg class="hero-tech-svg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -895,7 +1184,7 @@
                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
               </filter>
             </defs>
-            
+
             <g opacity="0.08">
               <circle cx="50" cy="50" r="1.5" fill="#94a3b8" />
               <circle cx="100" cy="50" r="1.5" fill="#94a3b8" />
@@ -925,32 +1214,42 @@
               <circle cx="400" cy="150" r="1.5" fill="#94a3b8" />
               <circle cx="450" cy="150" r="1.5" fill="#94a3b8" />
             </g>
-            
+
             <!-- Isometric server stacks -->
-            <path d="M 380,180 L 460,140 L 380,100 L 300,140 Z" fill="#0d1527" stroke="url(#glow-grad)" stroke-width="2" />
-            <path d="M 300,140 L 300,170 L 380,210 L 380,180 Z" fill="#0c1122" stroke="url(#glow-grad)" stroke-width="2" />
-            <path d="M 380,180 L 380,210 L 460,170 L 460,140 Z" fill="#131a30" stroke="url(#glow-grad)" stroke-width="2" />
-            
-            <path d="M 380,240 L 460,200 L 380,160 L 300,200 Z" fill="#0d1527" stroke="url(#glow-grad)" stroke-width="2" />
-            <path d="M 300,200 L 300,230 L 380,270 L 380,240 Z" fill="#0c1122" stroke="url(#glow-grad)" stroke-width="2" />
-            <path d="M 380,240 L 380,270 L 460,230 L 460,200 Z" fill="#131a30" stroke="url(#glow-grad)" stroke-width="2" />
-            
+            <path d="M 380,180 L 460,140 L 380,100 L 300,140 Z" fill="#0d1527" stroke="url(#glow-grad)"
+              stroke-width="2" />
+            <path d="M 300,140 L 300,170 L 380,210 L 380,180 Z" fill="#0c1122" stroke="url(#glow-grad)"
+              stroke-width="2" />
+            <path d="M 380,180 L 380,210 L 460,170 L 460,140 Z" fill="#131a30" stroke="url(#glow-grad)"
+              stroke-width="2" />
+
+            <path d="M 380,240 L 460,200 L 380,160 L 300,200 Z" fill="#0d1527" stroke="url(#glow-grad)"
+              stroke-width="2" />
+            <path d="M 300,200 L 300,230 L 380,270 L 380,240 Z" fill="#0c1122" stroke="url(#glow-grad)"
+              stroke-width="2" />
+            <path d="M 380,240 L 380,270 L 460,230 L 460,200 Z" fill="#131a30" stroke="url(#glow-grad)"
+              stroke-width="2" />
+
             <circle cx="330" cy="165" r="3" fill="#06b6d4" filter="url(#glow-effect)" />
             <circle cx="350" cy="175" r="3" fill="#10b981" />
             <circle cx="330" cy="225" r="3" fill="#06b6d4" filter="url(#glow-effect)" />
             <circle cx="350" cy="235" r="3" fill="#10b981" />
 
-            <path d="M 300,140 L 220,100 L 120,150" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4, 4" />
-            <path d="M 380,270 L 380,310 L 250,370" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            
+            <path d="M 300,140 L 220,100 L 120,150" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" stroke-dasharray="4, 4" />
+            <path d="M 380,270 L 380,310 L 250,370" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+
             <!-- Modern Flat Screen Monitor -->
-            <rect x="80" y="140" width="200" height="130" rx="8" fill="#0c1122" stroke="url(#glow-grad)" stroke-width="2" />
-            <path d="M 150,270 L 130,310 L 230,310 L 210,270 Z" fill="#0d1527" stroke="url(#glow-grad)" stroke-width="2" />
+            <rect x="80" y="140" width="200" height="130" rx="8" fill="#0c1122" stroke="url(#glow-grad)"
+              stroke-width="2" />
+            <path d="M 150,270 L 130,310 L 230,310 L 210,270 Z" fill="#0d1527" stroke="url(#glow-grad)"
+              stroke-width="2" />
             <path d="M 95,155 L 265,155" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
             <circle cx="100" cy="245" r="4" fill="#ef4444" />
             <circle cx="112" cy="245" r="4" fill="#fbbf24" />
             <circle cx="124" cy="245" r="4" fill="#10b981" />
-            
+
             <!-- CCTV Camera Symbol -->
             <g transform="translate(60, 60)" filter="url(#glow-effect)">
               <circle cx="30" cy="30" r="20" fill="rgba(6, 182, 212, 0.05)" stroke="#06b6d4" stroke-width="1.5" />
@@ -960,30 +1259,47 @@
             </g>
 
             <!-- Network Waves -->
-            <path d="M 230,80 A 40,40 0 0,1 270,120" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" opacity="0.3" />
-            <path d="M 220,70 A 60,60 0 0,1 280,130" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" opacity="0.6" />
-            <path d="M 210,60 A 80,80 0 0,1 290,140" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" filter="url(#glow-effect)" />
+            <path d="M 230,80 A 40,40 0 0,1 270,120" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"
+              opacity="0.3" />
+            <path d="M 220,70 A 60,60 0 0,1 280,130" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"
+              opacity="0.6" />
+            <path d="M 210,60 A 80,80 0 0,1 290,140" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"
+              filter="url(#glow-effect)" />
 
             <!-- Gear symbol -->
             <g transform="translate(180, 200)">
               <circle cx="20" cy="20" r="8" fill="none" stroke="#2563eb" stroke-width="2" />
-              <path d="M 20,6 L 20,10 M 20,30 L 20,34 M 6,20 L 10,20 M 30,20 L 34,20" stroke="#2563eb" stroke-width="2" stroke-linecap="round" />
+              <path d="M 20,6 L 20,10 M 20,30 L 20,34 M 6,20 L 10,20 M 30,20 L 34,20" stroke="#2563eb" stroke-width="2"
+                stroke-linecap="round" />
             </g>
           </svg>
         </div>
       </div>
-      
+
       <!-- Right Column: Quote Form Card -->
       <div class="hero-form-wrapper" id="quote-form">
         <div class="form-card">
+          <!-- Form Header -->
+          <div style="margin-bottom: var(--space-md); text-align: center;">
+            <span class="section-eyebrow" style="font-size: 0.75rem;">Get in Touch</span>
+            <h3
+              style="font-size: 1.5rem; font-family: var(--font-heading); font-weight: 700; color: var(--text-main); margin-top: 4px;">
+              Request a Service</h3>
+          </div>
+
           <!-- Custom Thank You Card (Initially Hidden) -->
           <div id="thank-you-card" class="thankyou-card" style="display: none;">
-            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: rgba(16, 185, 129, 0.08); color: var(--accent-green); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+            <div
+              style="width: 64px; height: 64px; border-radius: 50%; background-color: rgba(16, 185, 129, 0.08); color: var(--accent-green); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
               <i data-lucide="check" style="width: 36px; height: 36px; stroke-width: 3;"></i>
             </div>
-            <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--text-main); font-family: var(--font-heading);">Request Submitted!</h3>
-            <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2rem auto; font-size: 0.95rem; line-height: 1.6;">
-              Thank you for choosing Arzon Technologies. Your requirement has been successfully registered. Our team will review the details and provide the best solution at a competitive price.
+            <h3
+              style="font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--text-main); font-family: var(--font-heading);">
+              Request Submitted!</h3>
+            <p
+              style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2rem auto; font-size: 0.95rem; line-height: 1.6;">
+              Thank you for choosing Arzon Technologies. Your requirement has been successfully registered. Our team
+              will review the details and provide the best solution at a competitive price.
             </p>
             <button onclick="resetQuoteForm()" class="form-submit-btn" style="box-shadow: none;">
               <i data-lucide="rotate-ccw" style="width: 18px; height: 18px;"></i>
@@ -1031,12 +1347,24 @@
                 </select>
               </div>
 
-              <!-- Number of devices -->
-              <div class="form-group">
-                <label for="input-devices" class="form-label">
-                  Covered Devices
+              <!-- Covered Devices (Interactive Selection tags) -->
+              <div class="form-group full-width" style="margin-bottom: var(--space-xs);">
+                <label class="form-label">
+                  Covered Devices (Select all that apply)
                 </label>
-                <input type="text" name="devices" id="input-devices" class="form-input" placeholder="e.g. 1 Laptop, 5 PCs">
+                <div class="device-tags-container">
+                  <button type="button" class="device-tag" data-val="Laptop">💻 Laptop</button>
+                  <button type="button" class="device-tag" data-val="Desktop">🖥️ Desktop</button>
+                  <button type="button" class="device-tag" data-val="Printer">🖨️ Printer</button>
+                  <button type="button" class="device-tag" data-val="CCTV">📹 CCTV</button>
+                  <button type="button" class="device-tag" data-val="Network">🌐 Network</button>
+                  <button type="button" class="device-tag" data-val="Other" id="tag-other">⚙️ Other</button>
+                </div>
+                <!-- Dynamic text input for "Other" device type -->
+                <div id="other-device-input-container" style="display: none; margin-top: var(--space-xs); transition: var(--transition-all);">
+                  <input type="text" id="input-devices-other" class="form-input" placeholder="Please specify other devices..." style="font-size: 0.9rem; padding: 0.65rem 1rem;">
+                </div>
+                <input type="hidden" name="devices" id="input-devices" value="">
               </div>
 
               <!-- How urgent is this? -->
@@ -1067,7 +1395,8 @@
                 <label for="input-address" class="form-label">
                   Address
                 </label>
-                <input type="text" name="address" id="input-address" class="form-input" placeholder="Site/office address">
+                <input type="text" name="address" id="input-address" class="form-input"
+                  placeholder="Site/office address">
               </div>
 
               <!-- What Can We Help You With? (Requirements) -->
@@ -1075,7 +1404,8 @@
                 <label for="input-requirements" class="form-label">
                   Describe Requirements <span class="required-dot">*</span>
                 </label>
-                <textarea name="requirements" id="input-requirements" class="form-input" placeholder="Describe sales or services needed..." required></textarea>
+                <textarea name="requirements" id="input-requirements" class="form-input"
+                  placeholder="Describe sales or services needed..." required></textarea>
               </div>
             </div>
 
@@ -1095,93 +1425,103 @@
   <section id="services" class="services-section reveal">
     <div class="container">
       <div class="section-header">
+        <span class="section-eyebrow">What We Offer</span>
         <h2>Our Services</h2>
         <p>Expert, reliable sales and hardware solutions to keep your home and business IT running smoothly.</p>
       </div>
 
       <div class="services-grid">
-        <!-- 1. Desktop & Laptop Sales -->
-        <div class="service-card">
-          <div class="service-icon-box">
-            <i data-lucide="monitor"></i>
-          </div>
-          <h3 class="service-title">Desktop & Laptop Sales</h3>
-          <p class="service-desc">Quality systems and customized builds configured to meet your workload and budget requirements.</p>
-        </div>
-
-        <!-- 2. Computer Repair & Maintenance -->
+        <!-- 1. Computer Repair & Maintenance -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="wrench"></i>
           </div>
           <h3 class="service-title">Computer Repair & Maintenance</h3>
-          <p class="service-desc">Speedy diagnosis and troubleshooting for hardware failures, power issues, and hardware replacements.</p>
+          <p class="service-desc">Speedy diagnosis and troubleshooting for hardware failures, power issues, and hardware
+            replacements.</p>
         </div>
 
-        <!-- 3. CCTV Installation & Support -->
+        <!-- 2. CCTV Installation & Support -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="eye"></i>
           </div>
           <h3 class="service-title">CCTV Installation & Support</h3>
-          <p class="service-desc">End-to-end security setup and integration to keep your premises monitored and protected.</p>
+          <p class="service-desc">End-to-end security setup and integration to keep your premises monitored and
+            protected.</p>
         </div>
 
-        <!-- 4. Printer Sales & Repair -->
+        <!-- 3. Printer Sales & Repair -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="printer"></i>
           </div>
           <h3 class="service-title">Printer Sales & Repair</h3>
-          <p class="service-desc">Top-brand printers, installation services, mechanical repairs, and cartridge servicing.</p>
+          <p class="service-desc">Top-brand printers, installation services, mechanical repairs, and cartridge
+            servicing.</p>
         </div>
 
-        <!-- 5. Networking & Wi-Fi Setup -->
+        <!-- 4. Networking & Wi-Fi Setup -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="wifi"></i>
           </div>
           <h3 class="service-title">Networking & Wi-Fi Setup</h3>
-          <p class="service-desc">Optimized routing, switches, cabling, and secure wireless networks for solid connectivity.</p>
+          <p class="service-desc">Optimized routing, switches, cabling, and secure wireless networks for solid
+            connectivity.</p>
         </div>
 
-        <!-- 6. Data Backup & Recovery -->
+        <!-- 5. Data Backup & Recovery -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="database"></i>
           </div>
           <h3 class="service-title">Data Backup & Recovery</h3>
-          <p class="service-desc">Keep your sensitive records safe or retrieve lost files from damaged drives with our protocols.</p>
+          <p class="service-desc">Keep your sensitive records safe or retrieve lost files from damaged drives with our
+            protocols.</p>
         </div>
 
-        <!-- 7. Software Installation & Troubleshooting -->
+        <!-- 6. Software Installation & Troubleshooting -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="cpu"></i>
           </div>
           <h3 class="service-title">Software Installation & Troubleshooting</h3>
-          <p class="service-desc">Operating system updates, essential applications configuration, licensing, and cleanups.</p>
+          <p class="service-desc">Operating system updates, essential applications configuration, licensing, and
+            cleanups.</p>
         </div>
 
-        <!-- 8. Annual Maintenance Contract (AMC) -->
+        <!-- 7. Annual Maintenance Contract (AMC) -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="file-text"></i>
           </div>
           <h3 class="service-title">Annual Maintenance Contract (AMC)</h3>
-          <p class="service-desc">Scheduled checks, preventative services, and priority assistance agreements for businesses.</p>
+          <p class="service-desc">Scheduled checks, preventative services, and priority assistance agreements for
+            businesses.</p>
         </div>
 
-        <!-- 9. IT Support for Businesses -->
+        <!-- 8. IT Support for Businesses -->
         <div class="service-card">
           <div class="service-icon-box">
             <i data-lucide="server"></i>
           </div>
           <h3 class="service-title">IT Support for Businesses</h3>
-          <p class="service-desc">Server configuration, remote support, and proactive troubleshooting for your entire team.</p>
+          <p class="service-desc">Server configuration, remote support, and proactive troubleshooting for your entire
+            team.</p>
+        </div>
+
+        <!-- 9. Desktop & Laptop Sales -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i data-lucide="monitor"></i>
+          </div>
+          <h3 class="service-title">Desktop & Laptop Sales</h3>
+          <p class="service-desc">Quality systems and customized builds configured to meet your workload and budget
+            requirements.</p>
         </div>
       </div>
-      
+
       <!-- CTA Button to Scroll back to Form -->
       <div style="text-align: center; margin-top: 4.5rem;">
         <a href="#quote-form" class="hero-cta-btn">
@@ -1195,19 +1535,22 @@
   <!-- Why Choose Us Section -->
   <section id="why-choose-us" class="why-choose-us reveal">
     <div class="container">
-      
+
       <!-- Stats Strip -->
       <div class="stats-strip">
         <div class="stat-item">
-          <span class="stat-number">[500+]</span>
+          <i data-lucide="cpu" class="stat-icon" style="width: 32px; height: 32px;"></i>
+          <span class="stat-number">500+</span>
           <span class="stat-label">Devices Serviced</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">[10+]</span>
+          <i data-lucide="award" class="stat-icon" style="width: 32px; height: 32px;"></i>
+          <span class="stat-number">10+</span>
           <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">[24/7]</span>
+          <i data-lucide="clock" class="stat-icon" style="width: 32px; height: 32px;"></i>
+          <span class="stat-number">24/7</span>
           <span class="stat-label">Support Response</span>
         </div>
       </div>
@@ -1221,7 +1564,7 @@
         <!-- 1 -->
         <div class="trust-card">
           <div class="checkmark-container">
-            <i data-lucide="users" style="width: 20px; height: 20px;"></i>
+            <i data-lucide="users"></i>
           </div>
           <h3 class="trust-title">Experienced Technicians</h3>
           <p class="trust-desc">Certified IT professionals handle every diagnostic and repair with precision.</p>
@@ -1229,45 +1572,49 @@
         <!-- 2 -->
         <div class="trust-card">
           <div class="checkmark-container">
-            <i data-lucide="shield-check" style="width: 20px; height: 20px;"></i>
+            <i data-lucide="shield-check"></i>
           </div>
           <h3 class="trust-title">Genuine Products</h3>
-          <p class="trust-desc">We source and install only authentic, manufacturer-approved hardware and spares.</p>
+          <p class="trust-desc">We source and install only <span class="highlight-text">genuine parts</span> and
+            manufacturer-approved hardware.</p>
         </div>
         <!-- 3 -->
         <div class="trust-card">
           <div class="checkmark-container">
-            <i data-lucide="zap" style="width: 20px; height: 20px;"></i>
+            <i data-lucide="zap"></i>
           </div>
           <h3 class="trust-title">Fast & Reliable Service</h3>
-          <p class="trust-desc">Quick diagnostics and swift turnaround times to minimize your downtime.</p>
+          <p class="trust-desc">Quick diagnostics and swift turnaround times to minimize your downtime with <span
+              class="highlight-text">reliable service</span>.</p>
         </div>
         <!-- 4 -->
         <div class="trust-card">
           <div class="checkmark-container">
-            <i data-lucide="banknote" style="width: 20px; height: 20px;"></i>
+            <i data-lucide="banknote"></i>
           </div>
           <h3 class="trust-title">Affordable Pricing</h3>
-          <p class="trust-desc">Upfront quotes with competitive rates and absolutely no hidden expenses.</p>
+          <p class="trust-desc">Upfront quotes with competitive rates and absolutely <span class="highlight-text">no
+              hidden costs</span>.</p>
         </div>
         <!-- 5 -->
         <div class="trust-card">
           <div class="checkmark-container">
-            <i data-lucide="clock" style="width: 20px; height: 20px;"></i>
+            <i data-lucide="clock"></i>
           </div>
           <h3 class="trust-title">On-Time Support</h3>
-          <p class="trust-desc">Scheduled appointments and emergency call-outs executed strictly on schedule.</p>
+          <p class="trust-desc">Scheduled appointments and emergency support executed strictly on schedule with <span
+              class="highlight-text">24/7 response</span>.</p>
         </div>
         <!-- 6 -->
         <div class="trust-card">
           <div class="checkmark-container">
-            <i data-lucide="smile" style="width: 20px; height: 20px;"></i>
+            <i data-lucide="smile"></i>
           </div>
           <h3 class="trust-title">Customer Satisfaction</h3>
           <p class="trust-desc">Your business and peace of mind are at the center of everything we do.</p>
         </div>
       </div>
-      
+
       <!-- CTA Button to Scroll back to Form -->
       <div style="text-align: center; margin-top: 4.5rem;">
         <a href="#quote-form" class="hero-cta-btn">
@@ -1280,11 +1627,25 @@
 
   <!-- Footer -->
   <footer>
+    <!-- Glowing background blobs -->
+    <div class="glowing-blob blob-1" style="opacity: 0.3;"></div>
+    <div class="glowing-blob blob-2" style="opacity: 0.3;"></div>
     <div class="container">
       <div class="footer-columns">
-        
-        <!-- Column 1: About -->
-        <div class="footer-col footer-desc-col">
+
+        <!-- Column 1: Services -->
+        <div class="footer-col">
+          <span class="footer-title">Services</span>
+          <ul class="footer-links">
+            <li><a href="#services">Computer Repairs</a></li>
+            <li><a href="#services">CCTV Surveillance</a></li>
+            <li><a href="#services">IT Sales & Hardware</a></li>
+            <li><a href="#services">Annual Maintenance</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: About (Centered) -->
+        <div class="footer-col footer-desc-col footer-col-center">
           <div class="footer-logo-text">Arzon Technologies</div>
           <p>
             We provide professional Computer & IT Sales and Services for homes, offices, schools, and businesses.
@@ -1294,17 +1655,15 @@
           </p>
         </div>
 
-        <!-- Column 2: Quick Links -->
-        <div class="footer-col">
-          <span class="footer-title">Services</span>
+        <!-- Column 3: Quick Links -->
+        <div class="footer-col footer-col-right">
+          <span class="footer-title">Quick Links</span>
           <ul class="footer-links">
-            <li><a href="#services">IT Sales & Hardware</a></li>
-            <li><a href="#services">Computer Repairs</a></li>
-            <li><a href="#services">CCTV Surveillance</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#quote-form">Get in Touch</a></li>
           </ul>
         </div>
-
 
       </div>
 
@@ -1312,17 +1671,6 @@
       <div class="footer-bottom">
         <div class="footer-copyright">
           &copy; 2026 Arzon Technologies. All rights reserved.
-        </div>
-        <div class="footer-socials">
-          <a href="#" class="social-icon-btn" aria-label="Facebook">
-            <i data-lucide="facebook" style="width: 16px; height: 16px;"></i>
-          </a>
-          <a href="#" class="social-icon-btn" aria-label="Twitter">
-            <i data-lucide="twitter" style="width: 16px; height: 16px;"></i>
-          </a>
-          <a href="#" class="social-icon-btn" aria-label="LinkedIn">
-            <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -1338,14 +1686,14 @@
     // Handle form submission
     function submitQuoteForm(event) {
       event.preventDefault();
-      
+
       const form = document.getElementById('quote-form-element');
       const submitBtn = document.getElementById('submit-btn');
-      
+
       // Prevent double submissions
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<span>Submitting...</span><div class="spinner" style="width: 16px; height: 16px; border-width: 2px; border-top-color: white;"></div>`;
-      
+
       if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL") {
         alert("Please set up your Google Apps Script URL in index.html to enable form submissions.");
         submitBtn.disabled = false;
@@ -1353,48 +1701,65 @@
         lucide.createIcons();
         return;
       }
-      
+
       const formData = new FormData(form);
-      
+
       fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         body: formData,
         mode: 'no-cors' // Allows submission to redirect smoothly
       })
-      .then(() => {
-        // Show success state
-        form.style.display = 'none';
-        document.getElementById('thank-you-card').style.display = 'block';
-        lucide.createIcons();
-        document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth' });
-      })
-      .catch((error) => {
-        console.error('Error submitting form:', error);
-        alert("An error occurred during submission. Please try again.");
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" style="width: 16px; height: 16px;"></i>`;
-        lucide.createIcons();
-      });
+        .then(() => {
+          // Show success state
+          form.style.display = 'none';
+          document.getElementById('thank-you-card').style.display = 'block';
+          lucide.createIcons();
+          document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch((error) => {
+          console.error('Error submitting form:', error);
+          alert("An error occurred during submission. Please try again.");
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" style="width: 16px; height: 16px;"></i>`;
+          lucide.createIcons();
+        });
     }
 
     function resetQuoteForm() {
       document.getElementById('quote-form-element').reset();
       document.getElementById('thank-you-card').style.display = 'none';
       document.getElementById('quote-form-element').style.display = 'block';
-      
+
+      // Reset device tags active state
+      document.querySelectorAll('.device-tag.active').forEach(tag => {
+        tag.classList.remove('active');
+      });
+      document.getElementById('other-device-input-container').style.display = 'none';
+      document.getElementById('input-devices-other').value = '';
+      document.getElementById('input-devices').value = '';
+
       const submitBtn = document.getElementById('submit-btn');
       submitBtn.disabled = false;
       submitBtn.innerHTML = `<span>Submit Request</span><i data-lucide="send" style="width: 16px; height: 16px;"></i>`;
       lucide.createIcons();
     }
 
-    // Shrink header background transparency on scroll
-    window.addEventListener('scroll', function() {
+    // Shrink header background transparency on scroll & update progress bar
+    window.addEventListener('scroll', function () {
       const header = document.getElementById('main-header');
       if (window.scrollY > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
+      }
+
+      // Calculate scroll progress percentage
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) {
+        progressBar.style.width = scrolled + "%";
       }
     });
 
@@ -1417,6 +1782,53 @@
     document.querySelectorAll('.reveal').forEach(el => {
       revealObserver.observe(el);
     });
+
+    // Device Tags Click Handlers
+    document.querySelectorAll('.device-tag').forEach(tag => {
+      tag.addEventListener('click', function() {
+        this.classList.toggle('active');
+        
+        const otherInputContainer = document.getElementById('other-device-input-container');
+        const otherInput = document.getElementById('input-devices-other');
+        
+        if (this.id === 'tag-other') {
+          if (this.classList.contains('active')) {
+            otherInputContainer.style.display = 'block';
+            otherInput.focus();
+          } else {
+            otherInputContainer.style.display = 'none';
+            otherInput.value = '';
+          }
+        }
+        
+        updateSelectedDevices();
+      });
+    });
+
+    // Listen to changes in the 'Other' text input
+    document.getElementById('input-devices-other').addEventListener('input', function() {
+      updateSelectedDevices();
+    });
+
+    function updateSelectedDevices() {
+      const activeTags = [];
+      document.querySelectorAll('.device-tag.active').forEach(t => {
+        if (t.id !== 'tag-other') {
+          activeTags.push(t.getAttribute('data-val'));
+        }
+      });
+      
+      const otherTag = document.getElementById('tag-other');
+      const otherInput = document.getElementById('input-devices-other');
+      if (otherTag && otherTag.classList.contains('active') && otherInput.value.trim() !== '') {
+        activeTags.push(`Other: ${otherInput.value.trim()}`);
+      } else if (otherTag && otherTag.classList.contains('active')) {
+        activeTags.push('Other');
+      }
+      
+      document.getElementById('input-devices').value = activeTags.join(', ');
+    }
   </script>
 </body>
+
 </html>
